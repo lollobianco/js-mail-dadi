@@ -8,8 +8,11 @@ console.log(registeredUsers)
 let userEmail = document.getElementById('exampleInputEmail1');
 
 let accessButton = document.getElementById('accessButton');
+let registerButton = document.getElementById('registerButton');
 
-accessButton.addEventListener('click', function() {
+let alerts = document.getElementById('alerts');
+
+accessButton.addEventListener('click', function(){
 
    let emailValue = userEmail.value;
    console.log(emailValue)
@@ -31,3 +34,18 @@ accessButton.addEventListener('click', function() {
    return;
    
 });
+
+registerButton.addEventListener('click', function(){
+
+   let emailValue = userEmail.value;
+
+   if (emailValue == ''){
+      alert('Inserisci la tua E-mail!!!');
+      return;
+
+   } else{
+      registeredUsers.push(emailValue);
+      alerts.innerHTML = `<div class="alert alert-success w-25 mt-2" role="alert">Registrato, ora accedi per giocare</div>`;
+      console.log(registeredUsers)        
+   }
+})
