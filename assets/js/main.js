@@ -14,38 +14,45 @@ let alerts = document.getElementById('alerts');
 
 accessButton.addEventListener('click', function(){
 
-   let emailValue = userEmail.value;
-   console.log(emailValue)
-   console.log(registeredUsers.length)
+   // for (let i = 0; i < registeredUsers.length; i++){
 
-   for (let i = 0; i < registeredUsers.length; i++){
+      let emailValue = userEmail.value;
+      console.log(emailValue)
+
 
       if (emailValue == ''){
-            alert('Inserisci la tua E-mail!!!');
-            return;
+         alerts.innerHTML = `<div class="alert alert-danger w-25 mt-2" role="alert">Inserisci la tua E-mail!</div>`;
+         setTimeout(() => document.querySelector('.alert').classList.add('hide'), 1500);
 
-         } else if (emailValue == registeredUsers[i]){
-            alert('Registrato'); 
-            return;        
-         } 
-   }
+         } else{
+            
+            for (let i = 0; i < registeredUsers.length; i++){
+               console.log(emailValue)
+               if (registeredUsers[i] == emailValue){
+                  alerts.innerHTML = `<div class="alert alert-success w-25 mt-2" role="alert">Accesso Effettuato</div>`;
+                  setTimeout(() => document.querySelector('.alert').classList.add('hide'), 1500);
+               } else {
+                  alerts.innerHTML = `<div class="alert alert-danger w-25 mt-2" role="alert">Registrati!</div>`;
+                  setTimeout(() => document.querySelector('.alert').classList.add('hide'), 1500);
+               }
+               
+            }
+         }
 
-   alert('Registrati');
-   return;
-   
 });
 
-registerButton.addEventListener('click', function(){
+// registerButton.addEventListener('click', function(register){
 
-   let emailValue = userEmail.value;
+//    let emailValue = userEmail.value;
 
-   if (emailValue == ''){
-      alert('Inserisci la tua E-mail!!!');
-      return;
+//    if (emailValue == ''){
+//       alerts.innerHTML = `<div class="alert alert-danger alert-dismissible fade show w-25 mt-2" role="alert">Inserisci la tua E-mail!</div>`;
+//       setTimeout(() => document.querySelector('.alert').classList.add('hide'), 1500);
 
-   } else{
-      registeredUsers.push(emailValue);
-      alerts.innerHTML = `<div class="alert alert-success w-25 mt-2" role="alert">Registrato, ora accedi per giocare</div>`;
-      console.log(registeredUsers)        
-   }
-})
+//    } else{
+//       registeredUsers.push(emailValue);
+//       alerts.innerHTML = `<div class="alert alert-success w-25 mt-2" role="alert">Registrato, ora accedi per giocare</div>`;
+//       setTimeout(() => document.querySelector('.alert').classList.add('hide'), 1500);
+//       console.log(registeredUsers)        
+//    }
+// })
