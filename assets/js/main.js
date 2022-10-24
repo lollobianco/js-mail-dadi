@@ -37,9 +37,10 @@ accessButton.addEventListener('click', function(){
 
                      found = 'true';
 
-                     alerts.innerHTML = `<div class="alert alert-success w-25 mt-2" role="alert">Accesso Effettuato</div>`;
+                     alerts.innerHTML = `<button type="submit" class="btn btn-warning mt-2" id="diceGame" onclick="diceGame();return false">Gioca</button><div class="alert alert-success w-25 mt-2" role="alert">Accesso Effettuato</div>`;
                      setTimeout(() => document.querySelector('.alert').classList.add('hide'), 1500);
-                  } else {
+
+                  }  else {
                      alerts.innerHTML = `<div class="alert alert-danger w-25 mt-2" role="alert">Registrati!</div>`;
                      setTimeout(() => document.querySelector('.alert').classList.add('hide'), 1500);
                      }
@@ -65,3 +66,28 @@ registerButton.addEventListener('click', function(){
       console.log(registeredUsers)        
    }
 })
+
+
+
+
+function diceGame(){
+
+   let access = document.getElementById('access');
+   access.classList.add("d-none");
+
+}
+
+function playDiceGame(){
+
+   let playerDice = Math.round(Math.random() * 6) + 1;
+   console.log(playerDice)
+   
+   let computerDice = Math.round(Math.random() * 6) + 1;
+   console.log(computerDice)
+
+}
+
+
+
+
+
