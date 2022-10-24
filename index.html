@@ -9,9 +9,12 @@
    <link rel="stylesheet" href="./assets/css/style.css">
    <title>js-mail-dadi</title>
 </head>
-<body class="container">
+<body id="body" class="container">
 
-   <div id="access" class="d-flex flex-column align-items-center justify-content-center vh-100"> 
+   <div id="access" class="d-flex flex-column align-items-center justify-content-center vh-100 position-relative"> 
+
+      <i id="sun" class="fa-solid fa-sun position-absolute d-none fs-5" onclick="light()"></i>
+      <i id="moon" class="fa-solid fa-moon position-absolute fs-5" onclick="dark()"></i>
 
       <h1 class="text-center">Accedi o registrati per iniziare a giocare al gioco dei dadi 🎲</h1>
 
@@ -34,7 +37,7 @@
 
    <div id="diceGame" class="d-flex flex-column align-items-center justify-content-center d-none vh-100 position-relative">
 
-      <i class="fa-solid fa-xmark position-absolute" onclick="refreshPage()"></i>
+      <i id="cross" class="fa-solid fa-xmark position-absolute" onclick="refreshPage()"></i>
 
       <h1 class="text-center">Gioco Dei Dadi</h1>
 
@@ -59,7 +62,7 @@
                <div class="card p-0 mx-lg-3 mx-sm-1 col-6 col-sm-4">
                   <img src="./assets/dice.gif" class="card-img-top" alt="...">
                   <div class="card-body d-flex flex-column justify-content-center align-items-center">
-                     <h5 class="card-title text-center fs-sm-4 fs-6">Bot</h5>
+                     <h5 class="card-title text-center fs-sm-4 fs-6" id="botName" >Bot</h5>
                      <span id="numberBot" class="badge numberBadge text-bg-dark d-flex flex-column justify-content-center align-items-center fs-4 mt-2"></span>
                   </div>
                   <div class="card border-top border-end-0 border-bottom-0 border-start-0">

@@ -123,6 +123,35 @@ function refreshPage(){
    window.location.reload();
 } 
 
+function dark(){
+   let bodyBackground = document.getElementById('body');
+   let sun = document.getElementById('sun');
+   let moon = document.getElementById('moon');
+   let cross = document.getElementById('cross');
+   let playerName = document.getElementById('playerName');
+   let playerBot = document.getElementById('botName');
+
+
+   bodyBackground.classList.add('darkBg', 'text-white');
+   moon.classList.add('d-none');
+   sun.classList.remove('d-none'); 
+   cross.classList.add('text-white');
+   cross.classList.remove('text-black');
+   playerName.classList.add('text-black');
+   playerBot.classList.add('text-black') 
+}
+
+function light(){
+   let bodyBackground = document.getElementById('body');
+   let sun = document.getElementById('sun');
+   let moon = document.getElementById('moon');
+
+
+   bodyBackground.classList.remove('darkBg', 'text-white');
+   moon.classList.remove('d-none');
+   sun.classList.add('d-none');  
+}
+
 
 
 

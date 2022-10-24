@@ -26,3 +26,28 @@
    cursor: pointer;
    color: black;
 }
+
+.fa-sun{
+   cursor: pointer;
+   top: 25px;
+   right: 0;
+}
+
+.fa-moon{
+   cursor: pointer;
+   top: 25px;
+   right: 0;
+}
+
+.fa-sun:hover{
+   color: #FFC234;
+}
+
+.fa-moon:hover{
+   color: #FFC234;
+}
+
+.darkBg{
+   background-color: #1A1D21;
+}
+
