@@ -26,33 +26,42 @@ accessButton.addEventListener('click', function(){
 
          } else{
             
+            let found = 'false';
+
             for (let i = 0; i < registeredUsers.length; i++){
                console.log(emailValue)
-               if (registeredUsers[i] == emailValue){
-                  alerts.innerHTML = `<div class="alert alert-success w-25 mt-2" role="alert">Accesso Effettuato</div>`;
-                  setTimeout(() => document.querySelector('.alert').classList.add('hide'), 1500);
-               } else {
-                  alerts.innerHTML = `<div class="alert alert-danger w-25 mt-2" role="alert">Registrati!</div>`;
-                  setTimeout(() => document.querySelector('.alert').classList.add('hide'), 1500);
-               }
+
+               if(found == 'false'){
+
+                  if (registeredUsers[i] == emailValue){
+
+                     found = 'true';
+
+                     alerts.innerHTML = `<div class="alert alert-success w-25 mt-2" role="alert">Accesso Effettuato</div>`;
+                     setTimeout(() => document.querySelector('.alert').classList.add('hide'), 1500);
+                  } else {
+                     alerts.innerHTML = `<div class="alert alert-danger w-25 mt-2" role="alert">Registrati!</div>`;
+                     setTimeout(() => document.querySelector('.alert').classList.add('hide'), 1500);
+                     }
+               }  
                
             }
          }
 
 });
 
-// registerButton.addEventListener('click', function(register){
+registerButton.addEventListener('click', function(){
 
-//    let emailValue = userEmail.value;
+   let emailValue = userEmail.value;
 
-//    if (emailValue == ''){
-//       alerts.innerHTML = `<div class="alert alert-danger alert-dismissible fade show w-25 mt-2" role="alert">Inserisci la tua E-mail!</div>`;
-//       setTimeout(() => document.querySelector('.alert').classList.add('hide'), 1500);
+   if (emailValue == ''){
+      alerts.innerHTML = `<div class="alert alert-danger alert-dismissible fade show w-25 mt-2" role="alert">Inserisci la tua E-mail!</div>`;
+      setTimeout(() => document.querySelector('.alert').classList.add('hide'), 1500);
 
-//    } else{
-//       registeredUsers.push(emailValue);
-//       alerts.innerHTML = `<div class="alert alert-success w-25 mt-2" role="alert">Registrato, ora accedi per giocare</div>`;
-//       setTimeout(() => document.querySelector('.alert').classList.add('hide'), 1500);
-//       console.log(registeredUsers)        
-//    }
-// })
+   } else{
+      registeredUsers.push(emailValue);
+      alerts.innerHTML = `<div class="alert alert-success w-25 mt-2" role="alert">Registrato, ora accedi per giocare</div>`;
+      setTimeout(() => document.querySelector('.alert').classList.add('hide'), 1500);
+      console.log(registeredUsers)        
+   }
+})
