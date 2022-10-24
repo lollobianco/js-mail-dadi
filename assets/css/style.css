@@ -10,3 +10,16 @@
 .card-img-overlay{
    width: 50%;
 }
+
+.badge{
+   height: 50px;
+   width: 50px;
+}
+
+#winner{
+   height: 100px;
+}
+
+#alerts{
+   height: 200px;
+}

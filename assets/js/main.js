@@ -11,6 +11,10 @@ let accessButton = document.getElementById('accessButton');
 let registerButton = document.getElementById('registerButton');
 
 let alerts = document.getElementById('alerts');
+let form = document.getElementById('form'); 
+let winner = document.getElementById('winner');
+let numberPlayer = document.getElementById('numberPlayer');
+let numberBot = document.getElementById('numberBot');
 
 accessButton.addEventListener('click', function(){
 
@@ -37,7 +41,8 @@ accessButton.addEventListener('click', function(){
 
                      found = 'true';
 
-                     alerts.innerHTML = `<button type="submit" class="btn btn-warning mt-2" id="diceGame" onclick="diceGame();return false">Gioca</button><div class="alert alert-success w-25 mt-2" role="alert">Accesso Effettuato</div>`;
+                     form.innerHTML = `<button type="submit" class="btn btn-warning fs-5 mt-2" id="diceGameButton" onclick="diceGameStarter();return false">Gioca</button>`
+                     alerts.innerHTML = `<div class="alert alert-success w-25 mt-2" role="alert">Accesso Effettuato</div>`;
                      setTimeout(() => document.querySelector('.alert').classList.add('hide'), 1500);
 
                   }  else {
@@ -69,11 +74,17 @@ registerButton.addEventListener('click', function(){
 
 
 
+let playerName = document.getElementById("playerName");
 
-function diceGame(){
+function diceGameStarter(){
 
    let access = document.getElementById('access');
    access.classList.add("d-none");
+
+   let diceGame = document.getElementById('diceGame');
+   diceGame.classList.remove("d-none");
+
+   playerName.innerHTML = `${userEmail.value}`;
 
 }
 
@@ -81,9 +92,22 @@ function playDiceGame(){
 
    let playerDice = Math.round(Math.random() * 6) + 1;
    console.log(playerDice)
+   numberPlayer.innerHTML = `${playerDice}`;
    
    let computerDice = Math.round(Math.random() * 6) + 1;
    console.log(computerDice)
+   numberBot.innerHTML = `${computerDice}`;
+
+   if(computerDice > playerDice){
+      winner.innerHTML = `<div id="playerWinner" class="alert text-center alert-warning w-25 mt-2" role="alert">Bot ha vinto</div>`;
+      // setTimeout(() => document.getElementById('playerWinner').classList.add('hide'), 2000);
+   } else if(computerDice < playerDice){
+      winner.innerHTML = `<div id="botWinner" class="alert text-center alert-warning w-25 mt-2" role="alert">${userEmail.value} ha vinto</div>`;
+      // setTimeout(() => document.getElementById('botWinner').classList.add('hide'), 2000);
+   }  else{
+      winner.innerHTML = `<div id="draw" class="alert text-center alert-warning w-25 mt-2" role="alert">Pareggio</div>`;
+      // setTimeout(() => document.getElementById('draw').classList.add('hide'), 2000);
+   }
 
 }
 
