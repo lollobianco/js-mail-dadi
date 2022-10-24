@@ -27,7 +27,7 @@ accessButton.addEventListener('click', function(){
 
 
       if (emailValue == ''){
-         alerts.innerHTML = `<div class="alert alert-danger w-25 mt-2" role="alert">Inserisci la tua E-mail!</div>`;
+         alerts.innerHTML = `<div class="alert alert-danger mt-2" role="alert">Inserisci la tua E-mail!</div>`;
          setTimeout(() => document.querySelector('.alert').classList.add('hide'), 1500);
 
          } else{
@@ -43,10 +43,10 @@ accessButton.addEventListener('click', function(){
 
                      found = 'true';
 
-                     alerts.innerHTML = `<button type="submit" class="btn btn-warning fs-5 mt-2" id="diceGameButton" onclick="diceGameStarter();return false">Gioca</button><div class="alert alert-success w-25 mt-2" role="alert">Accesso Effettuato</div>`
+                     alerts.innerHTML = `<button type="submit" class="btn btn-warning fs-5 mt-2" id="diceGameButton" onclick="diceGameStarter();return false">Gioca</button><div class="alert alert-success mt-2" role="alert">Accesso Effettuato</div>`
 
                   }  else {
-                     alerts.innerHTML = `<div class="alert alert-danger w-25 mt-2" role="alert">Registrati!</div>`;
+                     alerts.innerHTML = `<div class="alert alert-danger mt-2" role="alert">Registrati!</div>`;
                      setTimeout(() => document.querySelector('.alert').classList.add('hide'), 1500);
                      }
                }  
@@ -61,12 +61,12 @@ registerButton.addEventListener('click', function(){
    let emailValue = userEmail.value;
 
    if (emailValue == ''){
-      alerts.innerHTML = `<div class="alert alert-danger w-25 mt-2" role="alert">Inserisci la tua E-mail!</div>`;
+      alerts.innerHTML = `<div class="alert alert-danger mt-2" role="alert">Inserisci la tua E-mail!</div>`;
       setTimeout(() => document.querySelector('.alert').classList.add('hide'), 1500);
 
    } else{
       registeredUsers.push(emailValue);
-      alerts.innerHTML = `<div class="alert alert-success w-25 mt-2" role="alert">Registrato, ora accedi per giocare</div>`;
+      alerts.innerHTML = `<div class="alert alert-success mt-2" role="alert">Registrato, ora accedi per giocare</div>`;
       setTimeout(() => document.querySelector('.alert').classList.add('hide'), 1500);
       console.log(registeredUsers)        
    }
@@ -101,20 +101,20 @@ function playDiceGame(){
    let i = 0;
 
    if(computerDice > playerDice){
-      winner.innerHTML = `<div id="playerWinner" class="alert text-center alert-warning w-25 mt-2" role="alert">Bot ha vinto</div>`;
+      winner.innerHTML = `<div id="playerWinner" class="alert text-center alert-warning mt-2 px-5" role="alert">Bot ha vinto</div>`;
       i = i + 1;
       botWinCounter.push(i);
       document.getElementById('botWinCounter').innerHTML = `${botWinCounter.length-1}`;
 
       
    } else if(computerDice < playerDice){
-      winner.innerHTML = `<div id="botWinner" class="alert text-center alert-warning w-25 mt-2" role="alert">${userEmail.value} ha vinto</div>`;
+      winner.innerHTML = `<div id="botWinner" class="alert text-center alert-warning mt-2 px-5" role="alert">${userEmail.value} ha vinto</div>`;
       i = i + 1;
       playerWinCounter.push(i);
       document.getElementById('playerWinCounter').innerHTML = `${playerWinCounter.length-1}`;
       
    }  else{
-      winner.innerHTML = `<div id="draw" class="alert text-center alert-warning w-25 mt-2" role="alert">Pareggio</div>`;      
+      winner.innerHTML = `<div id="draw" class="alert text-center alert-warning px-5 mt-2" role="alert">Pareggio</div>`;      
    }
 
 }

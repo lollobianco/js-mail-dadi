@@ -15,8 +15,8 @@
       <h1 class="text-center">Accedi o registrati per iniziare a giocare al gioco dei dadi 🎲</h1>
 
       <form class="container mt-5 text-center" id="form">
-         <label for="exampleInputEmail1" class="form-label fs-5">Indirizzo E-mail</label>
-         <input type="email" class="form-control w-50 mx-auto" id="exampleInputEmail1" aria-describedby="emailHelp">
+         <label for="exampleInputEmail1" class="form-label fs-5">Indirizzo e-mail o nickname</label>
+         <input type="email" class="form-control mx-auto" id="exampleInputEmail1" aria-describedby="emailHelp">
          <button type="submit" class="btn btn-primary mt-4" id="accessButton" onclick="return false">Accedi</button>
          <button type="submit" class="btn btn-primary mt-4" id="registerButton" onclick="return false">Registrati</button>
       </form>
@@ -31,21 +31,21 @@
    
 
 
-   <div id="diceGame" class="d-flex flex-column align-items-center justify-content-center vh-100 d-none">
+   <div id="diceGame" class="d-flex flex-column align-items-center justify-content-center d-none vh-100">
 
       <h1 class="text-center">Gioco Dei Dadi</h1>
 
-      <button type="submit" class="btn btn-warning w-25 fs-4 mt-4" id="playButton" onclick="playDiceGame();return false">LANCIA IL DADO</button>
+      <button type="submit" class="btn btn-warning fs-4 mt-4 px-5" id="playButton" onclick="playDiceGame();return false">LANCIA IL DADO</button>
 
       <div class="interface container mt-5">
 
-         <div class="row justify-content-center">
+         <div class="row justify-content-center ">
 
             
-               <div class="card p-0 w-25 mx-2" style="width: 18rem;">
+               <div class="card p-0 mx-lg-3 mx-sm-1 col-6 col-sm-4">
                   <img src="./assets/dice.gif" class="card-img-top" alt="...">
                   <div class="card-body d-flex flex-column justify-content-center align-items-center">
-                     <h5 class="card-title text-center fs-4" id="playerName"></h5>
+                     <h5 class="card-title text-center fs-sm-4 fs-6" id="playerName"></h5>
                      <span id="numberPlayer" class="badge numberBadge text-bg-dark d-flex flex-column  justify-content-center align-items-center fs-4 mt-2"></span>
                   </div>
                   <div class="card border-top border-end-0 border-bottom-0 border-start-0">
@@ -53,10 +53,10 @@
                   </div>
                </div>  
 
-               <div class="card p-0 w-25 mx-2" style="width: 18rem;">
+               <div class="card p-0 mx-lg-3 mx-sm-1 col-6 col-sm-4">
                   <img src="./assets/dice.gif" class="card-img-top" alt="...">
                   <div class="card-body d-flex flex-column justify-content-center align-items-center">
-                     <h5 class="card-title text-center fs-4">Bot</h5>
+                     <h5 class="card-title text-center fs-sm-4 fs-6">Bot</h5>
                      <span id="numberBot" class="badge numberBadge text-bg-dark d-flex flex-column justify-content-center align-items-center fs-4 mt-2"></span>
                   </div>
                   <div class="card border-top border-end-0 border-bottom-0 border-start-0">

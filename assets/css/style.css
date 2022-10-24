@@ -3,12 +3,7 @@
 }
 
 .card{
-   display: flex;
-   justify-content: space-between;
-}
-
-.card-img-overlay{
-   width: 50%;
+   height: 20%;
 }
 
 .numberBadge{
