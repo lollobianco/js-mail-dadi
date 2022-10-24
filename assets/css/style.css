@@ -18,3 +18,11 @@
 #alerts{
    height: 150px;
 }
+
+.fa-xmark{
+   left: 0px;
+   top: 25px;
+   font-size: 2rem;
+   cursor: pointer;
+   color: black;
+}

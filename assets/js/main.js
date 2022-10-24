@@ -119,6 +119,10 @@ function playDiceGame(){
 
 }
 
+function refreshPage(){
+   window.location.reload();
+} 
+
 
 
 
