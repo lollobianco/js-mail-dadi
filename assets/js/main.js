@@ -3,6 +3,8 @@
 // stampa un messaggio appropriato sull’esito del controllo.
 
 let registeredUsers = ['pippo@gmail.com', 'pluto@gmail.com', 'topolino@gmail.com', 'minni@gmail.com'];
+let playerWinCounter = [''];
+let botWinCounter = [''];
 console.log(registeredUsers)
 
 let userEmail = document.getElementById('exampleInputEmail1');
@@ -87,24 +89,32 @@ function diceGameStarter(){
 }
 
 function playDiceGame(){
-
-   let playerDice = Math.round(Math.random() * 6) + 1;
+   
+   let playerDice = Math.round(Math.random() * 5) + 1;
    console.log(playerDice)
    numberPlayer.innerHTML = `${playerDice}`;
    
-   let computerDice = Math.round(Math.random() * 6) + 1;
+   let computerDice = Math.round(Math.random() * 5) + 1;
    console.log(computerDice)
    numberBot.innerHTML = `${computerDice}`;
 
+   let i = 0;
+
    if(computerDice > playerDice){
       winner.innerHTML = `<div id="playerWinner" class="alert text-center alert-warning w-25 mt-2" role="alert">Bot ha vinto</div>`;
-      // setTimeout(() => document.getElementById('playerWinner').classList.add('hide'), 2000);
+      i = i + 1;
+      botWinCounter.push(i);
+      document.getElementById('botWinCounter').innerHTML = `${botWinCounter.length-1}`;
+
+      
    } else if(computerDice < playerDice){
       winner.innerHTML = `<div id="botWinner" class="alert text-center alert-warning w-25 mt-2" role="alert">${userEmail.value} ha vinto</div>`;
-      // setTimeout(() => document.getElementById('botWinner').classList.add('hide'), 2000);
+      i = i + 1;
+      playerWinCounter.push(i);
+      document.getElementById('playerWinCounter').innerHTML = `${playerWinCounter.length-1}`;
+      
    }  else{
-      winner.innerHTML = `<div id="draw" class="alert text-center alert-warning w-25 mt-2" role="alert">Pareggio</div>`;
-      // setTimeout(() => document.getElementById('draw').classList.add('hide'), 2000);
+      winner.innerHTML = `<div id="draw" class="alert text-center alert-warning w-25 mt-2" role="alert">Pareggio</div>`;      
    }
 
 }
