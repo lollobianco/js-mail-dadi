@@ -41,9 +41,7 @@ accessButton.addEventListener('click', function(){
 
                      found = 'true';
 
-                     form.innerHTML = `<button type="submit" class="btn btn-warning fs-5 mt-2" id="diceGameButton" onclick="diceGameStarter();return false">Gioca</button>`
-                     alerts.innerHTML = `<div class="alert alert-success w-25 mt-2" role="alert">Accesso Effettuato</div>`;
-                     setTimeout(() => document.querySelector('.alert').classList.add('hide'), 1500);
+                     alerts.innerHTML = `<button type="submit" class="btn btn-warning fs-5 mt-2" id="diceGameButton" onclick="diceGameStarter();return false">Gioca</button><div class="alert alert-success w-25 mt-2" role="alert">Accesso Effettuato</div>`
 
                   }  else {
                      alerts.innerHTML = `<div class="alert alert-danger w-25 mt-2" role="alert">Registrati!</div>`;
@@ -61,7 +59,7 @@ registerButton.addEventListener('click', function(){
    let emailValue = userEmail.value;
 
    if (emailValue == ''){
-      alerts.innerHTML = `<div class="alert alert-danger alert-dismissible fade show w-25 mt-2" role="alert">Inserisci la tua E-mail!</div>`;
+      alerts.innerHTML = `<div class="alert alert-danger w-25 mt-2" role="alert">Inserisci la tua E-mail!</div>`;
       setTimeout(() => document.querySelector('.alert').classList.add('hide'), 1500);
 
    } else{
