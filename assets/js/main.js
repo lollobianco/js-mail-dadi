@@ -3,6 +3,7 @@
 // stampa un messaggio appropriato sull’esito del controllo.
 
 let registeredUsers = ['pippo@gmail.com', 'pluto@gmail.com', 'topolino@gmail.com', 'minni@gmail.com'];
+console.log(registeredUsers)
 
 let userEmail = document.getElementById('exampleInputEmail1');
 
@@ -10,22 +11,23 @@ let accessButton = document.getElementById('accessButton');
 
 accessButton.addEventListener('click', function() {
 
-   if (userEmail.value == ''){
-      alert('Inserisci la tua E-mail!!!');
-      return;
+   let emailValue = userEmail.value;
+   console.log(emailValue)
+   console.log(registeredUsers.length)
 
-   } else{
-   
-      for (let i = 0; i <= registeredUsers.length; i++){
-         if (registeredUsers[i] == userEmail.value) {
-            alert('Sei registrato!!');
+   for (let i = 0; i < registeredUsers.length; i++){
+
+      if (emailValue == ''){
+            alert('Inserisci la tua E-mail!!!');
             return;
-   } else{
-      alert('registrati!!');
-      return;
-   }
-   }
+
+         } else if (emailValue == registeredUsers[i]){
+            alert('Registrato'); 
+            return;        
+         } 
    }
 
-
+   alert('Registrati');
+   return;
+   
 });
