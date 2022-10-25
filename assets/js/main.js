@@ -128,8 +128,8 @@ function dark(){
    let sun = document.getElementById('sun');
    let moon = document.getElementById('moon');
    let cross = document.getElementById('cross');
-   let playerName = document.getElementById('playerName');
-   let playerBot = document.getElementById('botName');
+   let playerCard = document.getElementById('playerCard');
+   let botCard = document.getElementById('botCard');
 
 
    bodyBackground.classList.add('darkBg', 'text-white');
@@ -137,8 +137,11 @@ function dark(){
    sun.classList.remove('d-none'); 
    cross.classList.add('text-white');
    cross.classList.remove('text-black');
-   playerName.classList.add('text-black');
-   playerBot.classList.add('text-black') 
+   playerCard.classList.add('darkCardBg');
+   botCard.classList.add('darkCardBg');
+   numberBot.classList.add('numberBadgeColor');
+   numberPlayer.classList.add('numberBadgeColor');
+
 }
 
 function light(){

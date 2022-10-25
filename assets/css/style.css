@@ -11,6 +11,11 @@
    width: 50px;
 }
 
+.numberBadgeColor{
+   background-color: #36393F;
+   border: 1px solid #202225;
+}
+
 #winner{
    height: 100px;
 }
@@ -48,6 +53,10 @@
 }
 
 .darkBg{
-   background-color: #1A1D21;
+   background-color: #36393F;
+}
+
+.darkCardBg{
+   background-color: #2F3136;
 }
 
