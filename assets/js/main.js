@@ -20,7 +20,7 @@ let numberBot = document.getElementById('numberBot');
 
 accessButton.addEventListener('click', function(){
 
-   // for (let i = 0; i < registeredUsers.length; i++){
+
 
       let emailValue = userEmail.value;
       console.log(emailValue)
