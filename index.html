@@ -9,12 +9,12 @@
    <link rel="stylesheet" href="./assets/css/style.css">
    <title>js-mail-dadi</title>
 </head>
-<body id="body" class="container">
+<body id="body" class="container position-relative">
+
+   <i id="sun" class="fa-solid fa-sun position-absolute d-none fs-5" onclick="light()"></i>
+   <i id="moon" class="fa-solid fa-moon position-absolute fs-5" onclick="dark()"></i>
 
    <div id="access" class="d-flex flex-column align-items-center justify-content-center vh-100 position-relative"> 
-
-      <i id="sun" class="fa-solid fa-sun position-absolute d-none fs-5" onclick="light()"></i>
-      <i id="moon" class="fa-solid fa-moon position-absolute fs-5" onclick="dark()"></i>
 
       <h1 class="text-center">Accedi o registrati per iniziare a giocare al gioco dei dadi 🎲</h1>
 
@@ -37,7 +37,7 @@
 
    <div id="diceGame" class="d-flex flex-column align-items-center justify-content-center d-none vh-100 position-relative">
 
-      <i id="cross" class="fa-solid fa-xmark position-absolute" onclick="refreshPage()"></i>
+      <i id="back" class="fa-solid fa-chevron-left position-absolute" onclick="goBack()"></i>
 
       <h1 class="text-center">Gioco Dei Dadi</h1>
 

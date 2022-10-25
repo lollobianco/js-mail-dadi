@@ -119,15 +119,19 @@ function playDiceGame(){
 
 }
 
-function refreshPage(){
-   window.location.reload();
+function goBack(){
+   let access = document.getElementById('access');
+   access.classList.remove("d-none");
+
+   let diceGame = document.getElementById('diceGame');
+   diceGame.classList.add("d-none");
 } 
 
 function dark(){
    let bodyBackground = document.getElementById('body');
    let sun = document.getElementById('sun');
    let moon = document.getElementById('moon');
-   let cross = document.getElementById('cross');
+   let back = document.getElementById('back');
    let playerCard = document.getElementById('playerCard');
    let botCard = document.getElementById('botCard');
 
@@ -135,8 +139,8 @@ function dark(){
    bodyBackground.classList.add('darkBg', 'text-white');
    moon.classList.add('d-none');
    sun.classList.remove('d-none'); 
-   cross.classList.add('text-white');
-   cross.classList.remove('text-black');
+   back.classList.add('text-white');
+   back.classList.remove('text-black');
    playerCard.classList.add('darkCardBg');
    botCard.classList.add('darkCardBg');
    numberBot.classList.add('numberBadgeColor');
@@ -148,11 +152,20 @@ function light(){
    let bodyBackground = document.getElementById('body');
    let sun = document.getElementById('sun');
    let moon = document.getElementById('moon');
+   let back = document.getElementById('back');
+   let playerCard = document.getElementById('playerCard');
+   let botCard = document.getElementById('botCard');
 
 
    bodyBackground.classList.remove('darkBg', 'text-white');
    moon.classList.remove('d-none');
-   sun.classList.add('d-none');  
+   sun.classList.add('d-none');
+   back.classList.remove('text-white');
+   back.classList.add('text-black');
+   playerCard.classList.remove('darkCardBg');
+   botCard.classList.remove('darkCardBg');
+   numberBot.classList.remove('numberBadgeColor');
+   numberPlayer.classList.remove('numberBadgeColor'); 
 }
 
 
