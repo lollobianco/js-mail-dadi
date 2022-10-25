@@ -3,8 +3,8 @@
 // stampa un messaggio appropriato sull’esito del controllo.
 
 let registeredUsers = ['pippo@gmail.com', 'pluto@gmail.com', 'topolino@gmail.com', 'minni@gmail.com'];
-let playerWinCounter = [''];
-let botWinCounter = [''];
+let playerWinCounter = [];
+let botWinCounter = [];
 console.log(registeredUsers)
 
 let userEmail = document.getElementById('exampleInputEmail1');
@@ -104,14 +104,14 @@ function playDiceGame(){
       winner.innerHTML = `<div id="playerWinner" class="alert text-center alert-warning mt-2 px-5" role="alert">Bot ha vinto</div>`;
       i = i + 1;
       botWinCounter.push(i);
-      document.getElementById('botWinCounter').innerHTML = `${botWinCounter.length-1}`;
+      document.getElementById('botWinCounter').innerHTML = `${botWinCounter.length}`;
 
       
    } else if(computerDice < playerDice){
       winner.innerHTML = `<div id="botWinner" class="alert text-center alert-warning mt-2 px-5" role="alert">${userEmail.value} ha vinto</div>`;
       i = i + 1;
       playerWinCounter.push(i);
-      document.getElementById('playerWinCounter').innerHTML = `${playerWinCounter.length-1}`;
+      document.getElementById('playerWinCounter').innerHTML = `${playerWinCounter.length}`;
       
    }  else{
       winner.innerHTML = `<div id="draw" class="alert text-center alert-warning px-5 mt-2" role="alert">Pareggio</div>`;      
@@ -167,6 +167,18 @@ function light(){
    numberBot.classList.remove('numberBadgeColor');
    numberPlayer.classList.remove('numberBadgeColor'); 
 }
+
+// function reset(){
+
+//    let playerWinCounter = [];
+//    let botWinCounter = [];
+
+//    // document.getElementById('playerWinCounter') = `${playerWinCounter.length - 1}`;
+//    // document.getElementById('botWinCounter') = `${botWinCounter.length - 1}`;
+
+//    document.getElementById('playerWinCounter').innerHTML =`Contatore vincite`;
+//    document.getElementById('botWinCounter').innerHTML = `Contatore vincite`;
+// }
 
 
 
